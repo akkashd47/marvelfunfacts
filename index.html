@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images5.alphacoders.com/399/thumb-1920-399453.jpg'); /* Replace with your image path or URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts Generator</h1>
+        <p id="fact"></p>
+        <button id="generateFact">Generate Another Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                title: "Marvel's First Superhero",
+                description: "The first superhero created by Marvel Comics was the Human Torch, who debuted in 1939 in 'Marvel Comics' #1."
+            },
+            {
+                title: "Stan Lee's Cameos",
+                description: "Stan Lee, the co-creator of many Marvel characters, made cameo appearances in nearly every Marvel Cinematic Universe film until his passing in 2018."
+            },
+            {
+                title: "Spider-Man's Popularity",
+                description: "Spider-Man is one of Marvel's most popular characters, often considered the face of the franchise, and has appeared in numerous comic series, animated shows, and films."
+            },
+            {
+                title: "The Avengers' Formation",
+                description: "The Avengers were formed in 1963 in 'The Avengers' #1, originally consisting of Iron Man, Thor, Hulk, Ant-Man, and Wasp."
+            },
+            {
+                title: "Marvel's Cinematic Universe",
+                description: "The Marvel Cinematic Universe (MCU) began with 'Iron Man' in 2008 and has since expanded to include over 30 films and numerous TV series."
+            },
+            {
+                title: "X-Men's Social Commentary",
+                description: "The X-Men comics often serve as a metaphor for social issues, including prejudice and discrimination, reflecting real-world struggles faced by marginalized groups."
+            },
+            {
+                title: "Wolverine's Healing Factor",
+                description: "Wolverine's mutant ability includes a powerful healing factor that allows him to recover from injuries quickly, making him nearly immortal."
+            },
+            {
+                title: "The Infinity Gauntlet",
+                description: "The 'Infinity Gauntlet' storyline, which features Thanos collecting the Infinity Stones, was originally published in 1991 and has become one of Marvel's most iconic arcs."
+            },
+            {
+                title: "Marvel's Diverse Characters",
+                description: "Marvel has made significant strides in diversity, introducing characters like Black Panther, Ms. Marvel, and Shang-Chi, who represent various cultures and backgrounds."
+            },
+            {
+                title: "Deadpool's Meta Humor",
+                description: "Deadpool is known for breaking the fourth wall, often addressing the audience directly and making jokes about the comic book industry and his own fictional nature."
+            }
+        ];
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${fact.title}: ${fact.description}`;
+        }
+
+        document.getElementById('generateFact').addEventListener('click', getRandomFact);
+
+        // Generate a fact on initial load
+        getRandomFact();
+    </script>
+</body>
+</html>
